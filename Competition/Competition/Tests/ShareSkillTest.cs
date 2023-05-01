@@ -10,6 +10,7 @@ using static Competition.Global.GlobalDefinitions;
 using Competition.Global;
 using AventStack.ExtentReports.Reporter;
 using SeleniumExtras.PageObjects;
+using AventStack.ExtentReports.Gherkin.Model;
 
 namespace Competition.Tests
 {
@@ -22,6 +23,7 @@ namespace Competition.Tests
             // Initialize ExtentReports
             var htmlReporter = new ExtentHtmlReporter(ReportPath);
             extent = new ExtentReports();
+            htmlReporter.LoadConfig(@"D:\Industry Connect\Internship\Tasks\MarsQA-2\Competition\Competition\Config\XMLFile.xml");
             extent.AttachReporter(htmlReporter);
             extent.AddSystemInfo("Environment", "QA");
             extent.AddSystemInfo("User", Environment.UserName);
@@ -34,10 +36,10 @@ namespace Competition.Tests
             try
             {
                 ShareSkillPage shareSkillPageObj = new ShareSkillPage();
-                shareSkillPageObj.ShareSkill();
+                shareSkillPageObj.ShareSkill(driver);
 
                 string newSkill = shareSkillPageObj.alertWindow(driver);
-                Assert.That(newSkill == "Service Listing Added successfully");
+                Assert.That(newSkill == "Service Listing Added successfully", "Error while adding a record.");
                 test.Log(Status.Pass, "Passed, action successfull.");
             }
             catch (Exception ex)

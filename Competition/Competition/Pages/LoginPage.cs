@@ -10,18 +10,8 @@ using SeleniumExtras.PageObjects;
 namespace Competition.Pages
 {
 
-    public class LoginPage
+    public class LoginPage : Base
     {
-        public LoginPage()
-        {
-            PageFactory.InitElements(driver, this);
-        }
-        IWebElement signinButton => driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
-        IWebElement emailTextbox => driver.FindElement(By.Name("email"));
-        IWebElement passwordTextbox => driver.FindElement(By.Name("password"));
-        IWebElement rememberMeCheckbox => driver.FindElement(By.Name("rememberDetails"));
-        IWebElement loginButton => driver.FindElement(By.XPath("//*[contains(text(),'Login')]"));
-
         public void LogInActions(IWebDriver driver)
         {
             // Referencing to an excel file and sheet name

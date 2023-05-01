@@ -25,9 +25,7 @@ namespace Competition.Tests
             extent.AddSystemInfo("User", Environment.UserName);
             extent.AddSystemInfo("Machine Name", Environment.MachineName);
         }
-        
         [Test, Order(1)]
-
         public void ViewListing()
         {
             test = extent.CreateTest(MethodBase.GetCurrentMethod().Name);
@@ -53,7 +51,7 @@ namespace Competition.Tests
                 ManageListingsPage manageListingsPageObj = new ManageListingsPage();
                 manageListingsPageObj.EditListing(driver);
                 string editedSkill = manageListingsPageObj.alertWindow(driver);
-                Assert.That(editedSkill == "Service Listing Updated successfully");
+                Assert.That(editedSkill == "Service Listing Updated successfully", "Error while updating the record.");
                 test.Log(Status.Pass, "Passed, action successfull.");
             }
             catch (Exception ex)
