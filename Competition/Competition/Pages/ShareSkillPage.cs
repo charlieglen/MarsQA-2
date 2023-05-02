@@ -44,50 +44,50 @@ namespace Competition.Pages
                 locationOnline.Click();
             }
             //Start date and End Date
-            startDate.SendKeys(ExcelLib.ReadData(Base.testRow, "Start date"));
+            startDate.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Date"));
             endDate.SendKeys(ExcelLib.ReadData(Base.testRow, "End Date"));
 
-            if (ExcelLib.ReadData(Base.testRow, "Start day") == "Sun")
+            if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Sun")
             {
                 selectSunday.Click();
-                startSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Mon")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Mon")
             {
                 selectMonday.Click();
-                startMonday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endMonday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startMonday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endMonday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Tue")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Tue")
             {
                 selectTuesday.Click();
-                startTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Wed")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Wed")
             {
                 selectWednesday.Click();
-                startWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Thu")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Thu")
             {
                 selectThursday.Click();
-                startThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Fri")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Fri")
             {
                 selectFriday.Click();
-                startFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Sat")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Sat")
             {
                 selectSaturday.Click();
-                startSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
             //Skill Trade
             if (ExcelLib.ReadData(Base.testRow, "Skill Trade") == "Skill-exchange")

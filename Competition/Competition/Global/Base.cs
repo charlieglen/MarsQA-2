@@ -21,11 +21,10 @@ namespace Competition.Global
     {
        
         //Initialize resource paths
-        public static int Browser = Int32.Parse(MarsResource.Browser);
         public static string ExcelPath = MarsResource.ExcelPath;
         public static string ScreenshotPath = MarsResource.ScreenShotPath;
         public static string ReportPath = MarsResource.ReportPath;
-        //public static string FileUploadPath = MarsResource.FileUploadPath;
+        public static string ReportXMLPath = MarsResource.ReportXMLPath;
         public static int testRow = Int32.Parse(MarsResource.testRow);
 
         //Initialize extent reports
@@ -48,6 +47,7 @@ namespace Competition.Global
         public static IWebElement tagsTextbox => driver.FindElement(By.XPath("//*[@id=\"service-listing-section\"]/div[2]/div/form/div[4]/div[2]/div/div/div/div/input"));
         public static IWebElement tagsListed => driver.FindElement(By.XPath("//*[@id=\"service-listing-section\"]/div[2]/div/form/div[4]/div[2]/div/div/div/span[last()]/a"));
         public static IWebElement serviceTypeHourly => driver.FindElement(By.XPath("//*[@name=\"serviceType\" and @value=\"0\"]"));
+        public static IWebElement tagListedSkillEx => driver.FindElement(By.XPath("//*[@id=\"service-listing-section\"]/div[2]/div/form/div[8]/div[4]/div/div/div/div/span/a"));
         public static IWebElement serviceTypeOneOff => driver.FindElement(By.XPath("//*[@name=\"serviceType\" and @value=\"1\"]"));
         public static IWebElement locationOnSite => driver.FindElement(By.XPath("//*[@name=\"locationType\" and @value=\"0\"]"));
         public static IWebElement locationOnline => driver.FindElement(By.XPath("//*[@name=\"locationType\" and @value=\"1\"]"));
@@ -104,16 +104,6 @@ namespace Competition.Global
         [SetUp]
         public void Initialize()
         {
-
-            //switch (Browser)
-            //{
-            //    case 1:
-            //        driver = new FirefoxDriver();
-            //        break;
-            //    case 2:
-            //        driver = new ChromeDriver();
-            //        break;
-            //}
 
             // Maximize browser window
             ExcelLib.PopulateInCollection(Base.ExcelPath, "LogIn");

@@ -54,10 +54,10 @@ namespace Competition.Pages
             {
                 locationOnline.Click();
             }
-            // Start date and End date
-            startDate.SendKeys(ExcelLib.ReadData(Base.testRow, "Start date"));
+            //Start date and End date
+            startDate.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Date"));
             endDate.SendKeys(ExcelLib.ReadData(Base.testRow, "End Date"));
-            // Clear Start and End Date and time
+            //Clear Start and End Date and time
             bool daySelected = true;
             int countDays = daysList.Count();
             for (int i = 0; i < countDays; i++)
@@ -68,66 +68,66 @@ namespace Competition.Pages
                     daysList[i].Click();
                 }
             }
-            // Clear Start time
+            //Clear Start time
             foreach (IWebElement startTimeValue in startTimeList)
             {
                 startTimeValue.SendKeys(Keys.Control + "a");
                 startTimeValue.SendKeys(Keys.Delete);
             }
-            // Clear End time
+            //Clear End time
             foreach (IWebElement endTimeValues in endTimeList)
             {
                 endTimeValues.SendKeys(Keys.Control + "a");
                 endTimeValues.SendKeys(Keys.Delete);
             }
-            // Select new Start and End date and time
-            if (ExcelLib.ReadData(Base.testRow, "Start day") == "Sun")
+            //Select new Start and End date and time
+            if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Sun")
             {
                 selectSunday.Click();
-                startSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endSunday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Mon")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Mon")
             {
                 selectMonday.Click();
-                startMonday.SendKeys(ExcelLib.ReadData(2, "Start time"));
-                endMonday.SendKeys(ExcelLib.ReadData(2, "End time"));
+                startMonday.SendKeys(ExcelLib.ReadData(2, "Start Time"));
+                endMonday.SendKeys(ExcelLib.ReadData(2, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Tue")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Tue")
             {
                 selectTuesday.Click();
-                startTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endTuesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Wed")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Wed")
             {
                 selectWednesday.Click();
-                startWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endWednesday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Thu")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Thu")
             {
                 selectThursday.Click();
-                startThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endThursday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Fri")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Fri")
             {
                 selectFriday.Click();
-                startFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endFriday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            else if (ExcelLib.ReadData(Base.testRow, "Start day") == "Sat")
+            else if (ExcelLib.ReadData(Base.testRow, "Start Day") == "Sat")
             {
                 selectSaturday.Click();
-                startSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start time"));
-                endSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "End time"));
+                startSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "Start Time"));
+                endSaturday.SendKeys(ExcelLib.ReadData(Base.testRow, "End Time"));
             }
-            // Skill Trade
+            //Skill Trade
             if (ExcelLib.ReadData(Base.testRow, "Skill Trade") == "Skill-exchange")
             {
                 skillExchangeSelect.Click();
-
+                tagListedSkillEx.Click();
                 skillExchange.SendKeys(ExcelLib.ReadData(Base.testRow, "Skill Exchange"));
                 skillExchange.SendKeys(Keys.Enter);
             }
@@ -136,7 +136,7 @@ namespace Competition.Pages
                 creditSelect.Click();
                 credit.SendKeys(ExcelLib.ReadData(Base.testRow, "Credit"));
             }
-            // Work Samples with AutoIT
+            //Work Samples with AutoIT
             workSampleUpload.Click();
 
             AutoItX3 autoIT = new AutoItX3();
@@ -154,7 +154,7 @@ namespace Competition.Pages
             {
                 isHiddenStatus.Click();
             }
-            // Save
+            //Save
             saveButton.Click();
         }
 

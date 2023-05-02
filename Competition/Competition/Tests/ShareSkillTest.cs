@@ -14,22 +14,24 @@ using AventStack.ExtentReports.Gherkin.Model;
 
 namespace Competition.Tests
 {
+    
     [TestFixture]
+    [Parallelizable]
     public class ShareSkillTest : Base
     {
         [OneTimeSetUp]
         public void StartExtentReports()
         {
             // Initialize ExtentReports
-            var htmlReporter = new ExtentHtmlReporter(ReportPath);
             extent = new ExtentReports();
-            htmlReporter.LoadConfig(@"D:\Industry Connect\Internship\Tasks\MarsQA-2\Competition\Competition\Config\XMLFile.xml");
+            var htmlReporter = new ExtentHtmlReporter(ReportPath);
+            htmlReporter.LoadConfig(ReportXMLPath);
             extent.AttachReporter(htmlReporter);
             extent.AddSystemInfo("Environment", "QA");
             extent.AddSystemInfo("User", Environment.UserName);
             extent.AddSystemInfo("Machine Name", Environment.MachineName);
         }
-        [Test]
+        [Test, Order(1)]
         public void AddSkill()
         {
             test = extent.CreateTest(MethodBase.GetCurrentMethod().Name);

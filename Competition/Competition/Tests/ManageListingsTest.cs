@@ -11,6 +11,7 @@ using AventStack.ExtentReports;
 namespace Competition.Tests
 {
     [TestFixture]
+    [Parallelizable]
     public class ManageListingsTest : Base
     {
         
@@ -18,8 +19,9 @@ namespace Competition.Tests
         public void StartExtentReports()
         {
             // Initialize ExtentReports
-            var htmlReporter = new ExtentHtmlReporter(ReportPath);
             extent = new ExtentReports();
+            var htmlReporter = new ExtentHtmlReporter(ReportPath);
+            htmlReporter.LoadConfig(ReportXMLPath);
             extent.AttachReporter(htmlReporter);
             extent.AddSystemInfo("Environment", "QA");
             extent.AddSystemInfo("User", Environment.UserName);

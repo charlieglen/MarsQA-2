@@ -23,7 +23,6 @@ namespace Competition.Pages
             passwordTextbox.SendKeys(ExcelLib.ReadData(2, "password"));
             rememberMeCheckbox.Click();
             loginButton.Click();
-
         }
     }
 }
