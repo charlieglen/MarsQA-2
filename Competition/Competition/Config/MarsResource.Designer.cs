@@ -59,31 +59,13 @@ namespace Competition.Config {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 2.
-        /// </summary>
-        internal static string Browser {
-            get {
-                return ResourceManager.GetString("Browser", resourceCulture);
-            }
-        }
-        
+       
         /// <summary>
         ///   Looks up a localized string similar to your path.
         /// </summary>
         internal static string ExcelPath {
             get {
                 return ResourceManager.GetString("ExcelPath", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to true.
-        /// </summary>
-        internal static string IsLogin {
-            get {
-                return ResourceManager.GetString("IsLogin", resourceCulture);
             }
         }
         
