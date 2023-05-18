@@ -1,30 +1,31 @@
-﻿using System;
-using System.Linq;
+﻿using Competition.Global;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using static Competition.Global.GlobalDefinitions;
-using Competition.Global;
-using NUnit.Framework;
-using SeleniumExtras.PageObjects;
 
 namespace Competition.Pages
 {
 
     public class LoginPage : Base
     {
-        public void LogInActions(IWebDriver driver)
+        public LoginPage()
         {
-            // Referencing to an excel file and sheet name
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             ExcelLib.PopulateInCollection(Base.ExcelPath, "LogIn");
-            
+        }
+
+        IWebElement signinButton => driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
+        IWebElement emailTextbox => driver.FindElement(By.Name("email"));
+        IWebElement passwordTextbox => driver.FindElement(By.Name("password"));
+        IWebElement rememberMeCheckbox => driver.FindElement(By.Name("rememberDetails"));
+        IWebElement loginButton => driver.FindElement(By.XPath("//*[contains(text(),'Login')]"));
+
+        public void LogInActions()
+        {
             signinButton.Click();
             emailTextbox.SendKeys(ExcelLib.ReadData(2, "UserEmail"));
-            passwordTextbox.SendKeys(ExcelLib.ReadData(2, "password"));
+            passwordTextbox.SendKeys(ExcelLib.ReadData(2, "Password"));
             rememberMeCheckbox.Click();
             loginButton.Click();
         }
     }
 }
-       
-           
+

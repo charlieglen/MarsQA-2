@@ -1,18 +1,10 @@
 ﻿using ExcelDataReader;
-using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using excel = Microsoft.Office.Interop.Excel;
-
 namespace Competition.Global
 {
-    
+
     class GlobalDefinitions
     {
         //Initialise the browser
@@ -47,8 +39,8 @@ namespace Competition.Global
 
         #endregion
 
-
         #region Excel 
+        
         public class ExcelLib
         {
             //Creating the collection we will use to store data 
@@ -80,7 +72,6 @@ namespace Competition.Global
             {
                 dataCol.Clear();
             }
-
 
             private static DataTable ExcelToDataTable(string fileName, string sheetName)
             {
@@ -135,7 +126,7 @@ namespace Competition.Global
 
                 catch (Exception e)
                 {
-                    
+
                     Console.WriteLine("Exception occurred in ExcelLib Class ReadData Method!" + Environment.NewLine + e.Message.ToString());
                     return null;
                 }
